@@ -1,3 +1,10 @@
-const date = new Date('2022-01-09');
-const predictedSolution = Pa(date);
-document.write('Predicted solution for ' + date + ': ' + predictedSolution);
+const wordleSolutionContainer = $('#wordle-solution');
+
+$('#datepicker').datepicker();
+
+$('#datepicker').on('changeDate', function (e) {
+    const predictedSolution = Pa(e.date);
+    wordleSolutionContainer.html(predictedSolution);
+});
+
+
